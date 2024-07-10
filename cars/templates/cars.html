@@ -48,6 +48,19 @@
       margin-bottom: 10px;
     }
 
+    .repo-car {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 200px;
+      background-color: #606060;
+    }
+
+    .repo-car h3 {
+      color: #fff;
+    }
+
     @media (max-width: 768px) {
       .car-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -115,6 +128,10 @@
           <div class="car-card">
             {% if car.photo %}
               <img src="{{ car.photo.url }}" alt="{{ car.model }} - {{ car.brand }}">
+            {% else %}
+              <div class="repo-car">
+                <h3>Imagem não cadastrada.</h3>
+              </div>
             {% endif %}
             <h2>{{ car.brand }} {{ car.model }}</h2>
             <p>{{ car.factory_year }} - R$ {{ car.value }}</p>
